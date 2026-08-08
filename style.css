@@ -333,6 +333,10 @@ footer {
   padding-bottom: 60px;
 }
 
+.accordion-content {
+  scroll-margin-top: 60px; /* ナビの高さに合わせて調整 */
+}
+
 /* ナビのアクティブ状態 */
 .navbar li a.active {
   color: #2c3e50;
