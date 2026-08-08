@@ -1,3 +1,6 @@
+/* ============================================
+   0. 基本設定
+============================================ */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -15,7 +18,47 @@ a {
   color: inherit;
 }
 
-/* ヒーロー */
+.btn {
+  display: inline-block;
+  background: #fff;
+  color: #2c3e50;
+  padding: 10px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: opacity 0.2s;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+.btn-form {
+  display: inline-block;
+  background: #2c3e50;
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 20px 0;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.btn-form:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
+}
+
+.note {
+  font-size: 0.85rem;
+  color: #777;
+}
+
+
+/* ============================================
+   1. ヒーロー（トップの自己紹介部分）
+============================================ */
 .hero {
   background: linear-gradient(135deg, #2c3e50, #34495e);
   color: #fff;
@@ -53,22 +96,20 @@ a {
   margin-bottom: 25px;
 }
 
-.btn {
-  display: inline-block;
-  background: #fff;
-  color: #2c3e50;
-  padding: 10px 28px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: opacity 0.2s;
+.profile-photo {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid rgba(255,255,255,0.6);
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
-.btn:hover {
-  opacity: 0.85;
-}
 
-/* ナビ */
+/* ============================================
+   2. ナビゲーション
+============================================ */
 .navbar {
   background: #fff;
   border-bottom: 1px solid #eee;
@@ -96,7 +137,33 @@ a {
   color: #2c3e50;
 }
 
-/* セクション共通 */
+.navbar li a.active {
+  color: #2c3e50;
+  font-weight: bold;
+  border-bottom: 2px solid #2c3e50;
+}
+
+.nav-link--jump {
+  font-weight: bold;
+}
+
+/* 矢印アイコン */
+.arrow {
+  display: inline-block;
+  font-size: 0.7rem;
+  margin-right: 4px;
+  transition: transform 0.3s ease;
+}
+
+.navbar li a.active .arrow {
+  color: #2c3e50;
+  transform: rotate(90deg);
+}
+
+
+/* ============================================
+   3. セクション共通
+============================================ */
 .section {
   max-width: 800px;
   margin: 0 auto;
@@ -123,12 +190,28 @@ a {
   margin-bottom: 12px;
 }
 
-.note {
-  font-size: 0.85rem;
-  color: #777;
+/* アコーディオン開閉 */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  padding-top: 0;
+  padding-bottom: 0;
+  opacity: 0;
+  scroll-margin-top: 60px; /* ナビの高さに合わせて調整 */
+  transition: max-height 0.5s ease, opacity 0.4s ease, padding 0.4s ease;
 }
 
-/* 研修メニュー カード */
+.accordion-content.open {
+  max-height: 3000px; /* 十分大きい値でOK */
+  opacity: 1;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+
+/* ============================================
+   4. 研修メニュー（カード）
+============================================ */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -154,7 +237,10 @@ a {
   color: #555;
 }
 
-/* 特徴 */
+
+/* ============================================
+   5. 研修の特徴
+============================================ */
 .features-grid {
   display: grid;
   gap: 20px;
@@ -165,7 +251,10 @@ a {
   color: #2c3e50;
 }
 
-/* 実績タイムライン */
+
+/* ============================================
+   6. 活動・実績（タイムライン）
+============================================ */
 .timeline {
   list-style: none;
   margin-top: 20px;
@@ -177,21 +266,14 @@ a {
   margin-bottom: 20px;
 }
 
-/* プロフィール */
+
+/* ============================================
+   7. プロフィール
+============================================ */
 .profile-name {
   font-weight: bold;
   font-size: 1.1rem;
   margin-bottom: 15px;
-}
-
-.profile-photo {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid rgba(255,255,255,0.6);
-  margin-bottom: 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 .plain-list {
@@ -199,7 +281,10 @@ a {
   margin-bottom: 12px;
 }
 
-/* 依頼の流れ */
+
+/* ============================================
+   8. 研修ご依頼の流れ
+============================================ */
 .flow-list {
   padding-left: 20px;
   margin-top: 20px;
@@ -209,7 +294,10 @@ a {
   margin-bottom: 16px;
 }
 
-/* お問い合わせ */
+
+/* ============================================
+   9. お問い合わせ
+============================================ */
 .contact-list {
   list-style: none;
   margin: 20px 0;
@@ -219,7 +307,78 @@ a {
   margin-bottom: 10px;
 }
 
-/* フッター */
+
+/* ============================================
+   10. ブログ
+============================================ */
+.blog-list {
+  list-style: none;
+  margin-top: 20px;
+}
+
+.blog-list-item {
+  border-bottom: 1px solid #ddd;
+}
+
+.blog-list-item a {
+  display: flex;
+  gap: 16px;
+  padding: 16px 4px;
+  text-decoration: none;
+  color: #333;
+  transition: opacity 0.2s;
+}
+
+.blog-list-item a:hover {
+  opacity: 0.7;
+}
+
+.blog-date {
+  color: #888;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.blog-title {
+  font-weight: bold;
+}
+
+/* 記事ページ */
+.post-date {
+  color: #888;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+.post-content {
+  margin-top: 20px;
+}
+
+.post-content h2 {
+  margin-top: 30px;
+  border-left: 4px solid #2c3e50;
+  padding-left: 12px;
+}
+
+.post-content ul {
+  padding-left: 20px;
+  margin-bottom: 12px;
+}
+
+.post-back {
+  margin-top: 40px;
+}
+
+.post-back a {
+  color: #2c3e50;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+
+/* ============================================
+   11. フッター
+============================================ */
 footer {
   text-align: center;
   padding: 30px 20px;
@@ -227,9 +386,10 @@ footer {
   color: #999;
 }
 
-/* ============================
-   レスポンシブ対応
-   ============================ */
+
+/* ============================================
+   12. レスポンシブ対応
+============================================ */
 
 /* タブレット以下（〜768px） */
 @media screen and (max-width: 768px) {
@@ -314,136 +474,4 @@ footer {
   .card, .feature {
     padding: 16px;
   }
-}
-
-/* アコーディオン用 */
-.accordion-content {
-  max-height: 0;
-  overflow: hidden;
-  padding-top: 0;
-  padding-bottom: 0;
-  opacity: 0;
-  transition: max-height 0.5s ease, opacity 0.4s ease, padding 0.4s ease;
-}
-
-.accordion-content.open {
-  max-height: 3000px; /* 十分大きい値でOK */
-  opacity: 1;
-  padding-top: 60px;
-  padding-bottom: 60px;
-}
-
-.accordion-content {
-  scroll-margin-top: 60px; /* ナビの高さに合わせて調整 */
-}
-
-/* ナビのアクティブ状態 */
-.navbar li a.active {
-  color: #2c3e50;
-  font-weight: bold;
-  border-bottom: 2px solid #2c3e50;
-}
-
-/* 矢印アイコン */
-.arrow {
-  display: inline-block;
-  font-size: 0.7rem;
-  margin-right: 4px;
-  transition: transform 0.3s ease;
-}
-
-/* activeクラスがついたら90度回転して▼に見える */
-.navbar li a.active .arrow {
-  transform: rotate(90deg);
-}
-
-.navbar li a.active .arrow {
-  color: #2c3e50;
-}
-
-/* お問い合わせだけ通常のナビリンクとして少し見た目を変える（任意） */
-.nav-link--jump {
-  font-weight: bold;
-}
-
-.btn-form {
-  display: inline-block;
-  background: #2c3e50;
-  color: #fff;
-  padding: 14px 32px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: bold;
-  margin: 20px 0;
-  transition: opacity 0.2s, transform 0.2s;
-}
-
-.btn-form:hover {
-  opacity: 0.85;
-  transform: translateY(-2px);
-}
-
-/* ブログ一覧 */
-.blog-list {
-  list-style: none;
-  margin-top: 20px;
-}
-
-.blog-list-item {
-  border-bottom: 1px solid #ddd;
-}
-
-.blog-list-item a {
-  display: flex;
-  gap: 16px;
-  padding: 16px 4px;
-  text-decoration: none;
-  color: #333;
-  transition: opacity 0.2s;
-}
-
-.blog-list-item a:hover {
-  opacity: 0.7;
-}
-
-.blog-date {
-  color: #888;
-  font-size: 0.9rem;
-  white-space: nowrap;
-}
-
-.blog-title {
-  font-weight: bold;
-}
-
-/* 記事ページ */
-.post-date {
-  color: #888;
-  font-size: 0.9rem;
-  margin-bottom: 8px;
-}
-
-.post-content {
-  margin-top: 20px;
-}
-
-.post-content h2 {
-  margin-top: 30px;
-  border-left: 4px solid #2c3e50;
-  padding-left: 12px;
-}
-
-.post-content ul {
-  padding-left: 20px;
-  margin-bottom: 12px;
-}
-
-.post-back {
-  margin-top: 40px;
-}
-
-.post-back a {
-  color: #2c3e50;
-  text-decoration: none;
-  font-weight: bold;
 }
