@@ -1,0 +1,14 @@
+---
+layout: default
+---
+<article class="section post">
+  <p class="post-date">{{ page.date | date: "%Y年%m月%d日" }}</p>
+  <h1>{{ page.title }}</h1>
+  <div class="post-content">
+    {{ content }}
+  </div>
+
+  <p class="post-back">
+    <a href="{{ site.baseurl }}/blog.html">← ブログ一覧に戻る</a>
+  </p>
+</article>

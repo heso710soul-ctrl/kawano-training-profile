@@ -1,0 +1,19 @@
+---
+layout: default
+title: ブログ
+---
+<section class="section">
+  <h2>ブログ</h2>
+  <p>研修や現場での気づきを、ゆるやかに更新しています。</p>
+
+  <ul class="blog-list">
+    {% for post in site.posts %}
+      <li class="blog-list-item">
+        <a href="{{ post.url | prepend: site.baseurl }}">
+          <span class="blog-date">{{ post.date | date: "%Y.%m.%d" }}</span>
+          <span class="blog-title">{{ post.title }}</span>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
