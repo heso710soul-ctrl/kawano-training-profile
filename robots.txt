@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://heso710soul-ctrl.github.io/kawano-training-profile/sitemap.xml
