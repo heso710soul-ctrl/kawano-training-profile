@@ -6,14 +6,17 @@ title: ブログ
   <h2>ブログ</h2>
   <p>研修や現場での気づきを、ゆるやかに更新しています。</p>
 
-  <ul class="blog-list">
-    {% for post in site.posts %}
-      <li class="blog-list-item">
-        <a href="{{ post.url | prepend: site.baseurl }}">
-          <span class="blog-date">{{ post.date | date: "%Y.%m.%d" }}</span>
-          <span class="blog-title">{{ post.title }}</span>
-        </a>
-      </li>
-    {% endfor %}
-  </ul>
+<ul class="blog-list">
+  {% for post in site.posts %}
+    <li class="blog-list-item">
+      <a href="{{ post.url | prepend: site.baseurl }}">
+        <span class="blog-date">{{ post.date | date: "%Y.%m.%d" }}</span>
+        {% if post.categories.size > 0 %}
+          <span class="blog-category">{{ post.categories | join: "・" }}</span>
+        {% endif %}
+        <span class="blog-title">{{ post.title }}</span>
+      </a>
+    </li>
+  {% endfor %}
+</ul>
 </section>
