@@ -1,7 +1,11 @@
 const navLinks = document.querySelectorAll('.nav-link:not(.nav-link--jump)');
 const sections = document.querySelectorAll('.accordion-content');
 
-document.querySelector('[data-target="programs"]').classList.add('active');
+// トップページ（アコーディオン）用：最初から開いておく項目があれば設定
+const defaultOpenLink = document.querySelector('[data-target="programs"]');
+if (defaultOpenLink) {
+  defaultOpenLink.classList.add('active');
+}
 
 navLinks.forEach(link => {
   link.addEventListener('click', (e) => {
@@ -17,7 +21,6 @@ navLinks.forEach(link => {
       targetSection.classList.add('open');
       link.classList.add('active');
 
-      // アニメーションが終わるのを待ってからスクロール
       targetSection.addEventListener('transitionend', function handler(ev) {
         if (ev.propertyName === 'max-height') {
           targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -37,7 +40,6 @@ categoryButtons.forEach(btn => {
   btn.addEventListener('click', () => {
     const selected = btn.getAttribute('data-category');
 
-    // ボタンのactive状態を切り替え
     categoryButtons.forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
 
@@ -54,7 +56,6 @@ categoryButtons.forEach(btn => {
       }
     });
 
-    // 該当記事が無い場合のメッセージ表示
     if (noPostsMessage) {
       noPostsMessage.style.display = visibleCount === 0 ? 'block' : 'none';
     }
