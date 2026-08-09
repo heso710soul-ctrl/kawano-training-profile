@@ -27,3 +27,36 @@ navLinks.forEach(link => {
     }
   });
 });
+
+// ブログのカテゴリーフィルター
+const categoryButtons = document.querySelectorAll('.category-btn');
+const blogItems = document.querySelectorAll('.blog-list-item');
+const noPostsMessage = document.querySelector('.no-posts-message');
+
+categoryButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const selected = btn.getAttribute('data-category');
+
+    // ボタンのactive状態を切り替え
+    categoryButtons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    let visibleCount = 0;
+
+    blogItems.forEach(item => {
+      const itemCategories = item.getAttribute('data-categories').split(',');
+
+      if (selected === 'all' || itemCategories.includes(selected)) {
+        item.style.display = '';
+        visibleCount++;
+      } else {
+        item.style.display = 'none';
+      }
+    });
+
+    // 該当記事が無い場合のメッセージ表示
+    if (noPostsMessage) {
+      noPostsMessage.style.display = visibleCount === 0 ? 'block' : 'none';
+    }
+  });
+});

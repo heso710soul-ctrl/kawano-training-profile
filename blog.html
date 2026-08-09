@@ -6,17 +6,33 @@ title: ブログ
   <h2>ブログ</h2>
   <p>研修や現場での気づきを、ゆるやかに更新しています。</p>
 
-<ul class="blog-list">
-  {% for post in site.posts %}
-    <li class="blog-list-item">
-      <a href="{{ post.url | prepend: site.baseurl }}">
-        <span class="blog-date">{{ post.date | date: "%Y.%m.%d" }}</span>
-        {% if post.categories.size > 0 %}
-          <span class="blog-category">{{ post.categories | join: "・" }}</span>
-        {% endif %}
-        <span class="blog-title">{{ post.title }}</span>
-      </a>
-    </li>
-  {% endfor %}
-</ul>
+  <!-- カテゴリーフィルター -->
+  <div class="category-filter">
+    <button class="category-btn active" data-category="all">
+      すべて <span class="category-count">{{ site.posts.size }}</span>
+    </button>
+    {% assign categories = site.categories | sort %}
+    {% for category in categories %}
+      <button class="category-btn" data-category="{{ category[0] }}">
+        {{ category[0] }} <span class="category-count">{{ category[1].size }}</span>
+      </button>
+    {% endfor %}
+  </div>
+
+  <ul class="blog-list">
+    {% for post in site.posts %}
+      <li class="blog-list-item" data-categories="{{ post.categories | join: ',' }}">
+        <a href="{{ post.url | prepend: site.baseurl }}">
+          <span class="blog-date">{{ post.date | date: "%Y.%m.%d" }}</span>
+          {% if post.categories.size > 0 %}
+            <span class="blog-category">{{ post.categories | join: "・" }}</span>
+          {% endif %}
+          <span class="blog-title">{{ post.title }}</span>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <!-- 該当記事が無い時のメッセージ -->
+  <p class="no-posts-message" style="display:none;">このカテゴリーの記事はまだありません。</p>
 </section>
