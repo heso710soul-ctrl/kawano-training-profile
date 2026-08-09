@@ -6,6 +6,8 @@ baseurl: "/kawano-training-profile"
 markdown: kramdown
 permalink: /blog/:year-:month-:day-:title/
 
+timezone: Asia/Tokyo
+
 # Jekyllのビルド対象から除外するファイル
 exclude:
   - README.md
