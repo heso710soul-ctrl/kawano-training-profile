@@ -1,0 +1,11 @@
+title: 河野智也｜組織づくり・人材育成講師
+description: "「伝え方」と「関わり方」で、現場の空気を変える研修を行っています。"
+url: "https://heso710soul-ctrl.github.io"
+baseurl: "/kawano-training-profile"
+
+markdown: kramdown
+permalink: /blog/:year-:month-:day-:title/
+
+# Jekyllのビルド対象から除外するファイル
+exclude:
+  - README.md
