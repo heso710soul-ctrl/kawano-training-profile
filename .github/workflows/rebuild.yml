@@ -7,9 +7,19 @@ on:
   # 手動で実行ボタンを押せるようにする設定
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   trigger-build:
     runs-on: ubuntu-latest
     steps:
-      - name: Trigger GitHub Pages rebuild
+      - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Trigger GitHub Pages rebuild
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git commit --allow-empty -m "Scheduled rebuild $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git push
