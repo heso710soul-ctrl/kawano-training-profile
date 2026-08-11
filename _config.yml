@@ -8,6 +8,9 @@ permalink: /blog/:year-:month-:day-:title/
 
 timezone: Asia/Tokyo
 
+plugins:
+  - jekyll-sitemap
+
 # Jekyllのビルド対象から除外するファイル
 exclude:
   - README.md
