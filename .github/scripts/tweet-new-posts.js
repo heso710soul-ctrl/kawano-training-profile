@@ -62,9 +62,11 @@ async function main() {
         continue;
       }
 
-      const tweetText = `${title}\n\n${url}`;
+      // ポスト文面の組み立て
+      const tweetText = `ブログを更新しました。\n\n『${title}』\n\n${url}\n\n#仙台 #メンター #へそ`;
+
       await rwClient.v2.tweet(tweetText);
-      console.log(`投稿しました: ${tweetText}`);
+      console.log(`投稿しました:\n${tweetText}`);
     } catch (err) {
       console.error(`投稿に失敗しました (${filePath}):`, err);
     }
