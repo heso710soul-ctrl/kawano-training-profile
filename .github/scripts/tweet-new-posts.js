@@ -62,8 +62,8 @@ async function main() {
         continue;
       }
 
-      // ポスト文面の組み立て
-      const tweetText = `ブログを更新しました。\n\n『${title}』\n\n${url}\n\n#仙台 #メンター #へそ`;
+      // 修正：ハッシュタグをURLの前に配置
+      const tweetText = `ブログを更新しました。\n『${title}』\n#仙台 #メンター #へそ\n\n${url}`;
 
       await rwClient.v2.tweet(tweetText);
       console.log(`投稿しました:\n${tweetText}`);
