@@ -519,6 +519,7 @@ ul, ol { list-style: none; }
 }
 .menu-feature p { color: var(--ink-soft); }
 .menu-feature p + p { margin-top: 8px; }
+.menu-feature + .menu-feature { margin-top: 16px; }
 
 /* ------------------------------------------------------------
    7. お客様の声
