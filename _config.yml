@@ -22,5 +22,5 @@ exclude:
 # （手順は contact-form-gas/README.md を参照）
 # 空のあいだは、送信ボタンを押すと下の contact_fallback_url（旧Googleフォーム）を案内します
 # ============================================
-contact_endpoint: ""
+contact_endpoint: "https://script.google.com/macros/s/AKfycbyguW6hLjmvPAWn8r3JudXL5r5Kdxzgpg0Vm8V5GaCOGXXpcHTugNtP19MgjFTPXqfD/exec"
 contact_fallback_url: "https://forms.gle/biAGU34zxz9rMv6e9"
