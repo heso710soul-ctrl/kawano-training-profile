@@ -1,0 +1,31 @@
+{%- comment -%}
+  全ページ共通のヘッダー（トップページ・ブログ一覧・記事ページ）
+  リンク先は include.home が true のときはページ内リンク、それ以外はトップページへのリンクになります
+{%- endcomment -%}
+{%- if include.home -%}{%- assign top = "" -%}{%- else -%}{%- assign top = site.baseurl | append: "/" -%}{%- endif -%}
+<a class="skip-link" href="#main">本文へ移動</a>
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="site-name" href="{{ site.baseurl }}/">
+      <span class="site-name__main">河野 智也</span>
+      <span class="site-name__sub">組織づくり・人材育成メンター</span>
+    </a>
+
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="menu-toggle__bar" aria-hidden="true"></span>
+      <span class="menu-toggle__label">メニュー</span>
+    </button>
+
+    <nav class="site-nav" id="site-nav" aria-label="サイト内">
+      <ul>
+        <li><a href="{{ top }}#approach">大切にしていること</a></li>
+        <li><a href="{{ top }}#programs">研修・相談メニュー</a></li>
+        <li><a href="{{ top }}#voices">お客様の声</a></li>
+        <li><a href="{{ top }}#profile">プロフィール</a></li>
+        <li><a href="{{ top }}#flow">ご依頼の流れ</a></li>
+        <li><a href="{{ site.baseurl }}/blog/">ブログ</a></li>
+        <li class="site-nav__cta"><a class="button button--small" href="{{ top }}#contact">相談してみる</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

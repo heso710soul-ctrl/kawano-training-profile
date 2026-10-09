@@ -1,18 +1,14 @@
+---
+# トップページ（Jekyllで共通パーツを読み込むため、この区切り線は消さないでください）
+---
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-
-  <!-- ============================
-       基本設定
-  ============================ -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% include head-common.html %}
   <title>河野智也｜組織づくり・人材育成メンター（コミュニケーション・ハラスメント防止研修）</title>
   <meta name="description" content="河野智也（かわの ともや）は、組織づくり・人材育成メンターとして、ロジカルシンキング・コミュニケーション・ハラスメント防止などのテーマで「自立して考え動ける人」を育てる伴走型の研修・支援を行っています。携帯キャリア代理店での17年の現場経験をもとに、答えを押しつけるのではなく、現場のリアルな悩みから一緒に解決策を導く実践的な関わりを大切にしています。">
 
-  <!-- ============================
-       OGP設定（SNSシェア時の表示）
-  ============================ -->
+  <!-- OGP設定（SNSシェア時の表示） -->
   <meta property="og:title" content="河野智也｜組織づくり・人材育成メンター">
   <meta property="og:description" content="『伝え方』と『関わり方』で、現場の空気を一緒に変えていく伴走型メンターとして支援しています。">
   <meta property="og:image" content="https://heso710soul-ctrl.github.io/kawano-training-profile/image/image_001.jpg">
@@ -20,25 +16,7 @@
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
 
-  <!-- ============================
-       Google Analytics
-  ============================ -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YFEYKYP58K"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-YFEYKYP58K');
-  </script>
-
-  <!-- ============================
-       スタイルシート
-  ============================ -->
-  <link rel="stylesheet" href="style.css">
-
-  <!-- ============================
-       構造化データ（Person / SEO用）
-  ============================ -->
+  <!-- 構造化データ（Person / SEO用） -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -56,203 +34,323 @@
   }
   </script>
 </head>
-<body>
+<body class="home">
 
-<!-- ヘッダー -->
-<header class="hero">
-  <div class="hero-inner">
-    <img src="image/image_001.jpg" alt="河野智也" class="profile-photo">
-    <p class="title">組織づくり・人材育成メンター</p>
-    <h1>河野 智也<span class="kana">（かわの ともや）</span></h1>
-    <p class="lead">『伝え方』と『関わり方』で、現場の空気を一緒に変えていく伴走型メンターとして支援しています。</p>
-    <p class="sub">ロジカルシンキング／コミュニケーション／ハラスメント防止研修<br>
-      音楽（バンド演奏）でのご依頼も承っております</p>
-    <a href="#contact" class="btn">お問い合わせはこちら</a>
-  </div>
-</header>
+{% include site-header.html home=true %}
 
-<!-- ナビ -->
-<nav class="navbar">
-  <ul>
-    <li><a href="#" data-target="programs" class="nav-link"><span class="arrow">▶</span> 研修メニュー</a></li>
-    <li><a href="#" data-target="features" class="nav-link"><span class="arrow">▶</span> 特徴</a></li>
-    <li><a href="#" data-target="achievements" class="nav-link"><span class="arrow">▶</span> 実績</a></li>
-    <li><a href="#" data-target="profile" class="nav-link"><span class="arrow">▶</span> プロフィール</a></li>
-    <li><a href="#" data-target="voices" class="nav-link"><span class="arrow">▶</span> お客様の声</a></li>
-    <li><a href="#" data-target="flow" class="nav-link"><span class="arrow">▶</span> 依頼の流れ</a></li>
-    <li><a href="blog/" class="nav-link nav-link--jump">ブログ</a></li>
-    <li><a href="https://note.com/heso710" class="nav-link nav-link--jump" target="_blank" rel="noopener">note</a></li>
-    <li><a href="#contact" class="nav-link nav-link--jump">お問い合わせ</a></li>
-  </ul>
-</nav>
+<main id="main">
 
-<main>
+  <!-- ========================================
+       ファーストビュー
+       「よく耳にしてきた現場の声」から始めることで、まず聴く姿勢を伝える
+  ======================================== -->
+  <section class="hero">
+    <div class="hero__text">
+      <p class="hero__heard">現場でいちばん多く聞いてきた言葉</p>
+      <h1 class="hero__voice">
+        <span class="hero__quote"><span class="nb">「どう伝えたらいいか、</span><span class="nb">わからない」</span></span>
+      </h1>
+      <p class="hero__answer"><span class="nb">その言葉の続きを、</span><span class="nb">まずはゆっくり聴かせてください。</span></p>
+      <p class="hero__lead">店舗や中小企業の「人」と「伝え方」の悩みに、対話で寄り添う伴走型メンターです。答えを押しつけるのではなく、現場の事情を伺いながら、明日から使える言葉と関わり方を一緒に考えます。</p>
+      <div class="hero__actions">
+        <a class="button" href="#contact">相談してみる</a>
+        <a class="text-link" href="#programs">研修・相談メニューを見る</a>
+      </div>
+    </div>
+    <figure class="hero__photo">
+      <img src="image/image_001.jpg" alt="ケヤキ並木の前で話す河野智也" width="2048" height="1371">
+      <figcaption>河野 智也<span>かわの ともや</span></figcaption>
+    </figure>
+  </section>
 
-  <!-- 研修メニュー -->
-  <section id="programs" class="section accordion-content open">
-    <h2>提供している研修・講座</h2>
-    <p>現場や個人の「人・コミュニケーション」に関わるお悩みに合わせて、以下のようなテーマで支援を行っています。<br>
-    対象：個人事業主・店長・リーダー・管理職・一般スタッフ など、ご状況に合わせて柔軟に調整可能です。<br></p>
+  <!-- ========================================
+       よく伺うお悩み
+  ======================================== -->
+  <section class="section section--tint" id="worries" aria-labelledby="worries-title">
+    <div class="section__inner">
+      <h2 class="section__title" id="worries-title">こんなお話を、よく伺います</h2>
+      <ul class="worries">
+        <li>部下とどう向き合えばいいのか、迷っている</li>
+        <li>新人がなかなか定着しない。育て方に自信がない</li>
+        <li>報告・連絡・相談が、なんだか分かりにくい</li>
+        <li>どこからがハラスメントなのか、線引きが怖い</li>
+        <li>頭の中がモヤモヤして、何から手をつければいいか分からない</li>
+      </ul>
+      <p class="worries__note">はっきり言葉にできていなくても大丈夫です。話しながら一緒に整理していくところから始めます。</p>
+    </div>
+  </section>
 
-    <div class="cards">
-      <div class="card">
-        <h3>1on1 個別メンタリング・相談</h3>
-        <p>個人のお悩みや課題にじっくり向き合い、AI技術を活用してあなた専用のワークシートや整理資料を作成・進呈します。</p>
-      </div>
-      <div class="card">
-        <h3>メンタリング・育成研修</h3>
-        <p>部下・後輩の「話を引き出す」「成長を支える」ための関わり方</p>
-      </div>
-      <div class="card">
-        <h3>ロジカルシンキング基礎研修</h3>
-        <p>報告・連絡・相談が「分かりやすくなる」考え方と伝え方</p>
-      </div>
-      <div class="card">
-        <h3>コミュニケーションスキル研修</h3>
-        <p>聴き方・伝え方・フィードバックの基本</p>
-      </div>
-      <div class="card">
-        <h3>ハラスメント防止研修</h3>
-        <p>「どこからがアウトなのか？」グレーゾーンを具体例で理解する</p>
-      </div>
-      <div class="card">
-        <h3>自己啓発・マインドセット研修</h3>
-        <p>空手の経験も交えながら、「折れない心」と「前向きに学ぶ姿勢」を育てる</p>
-      </div>
-      <div class="card">
-        <h3>若手・新人スタッフ育成研修</h3>
-        <p>早期離職防止・戦力化のための指導・育成のポイント</p>
-      </div>
-      <div class="card">
-        <h3>その他</h3>
-        <p>イベントや施設でのバンド演奏のご要望も承っております</p>
-        <p><a href="https://heso710soul-ctrl.github.io/HeSoband/" target="_blank" rel="noopener noreferrer">HeSo band official site</a></p>
+  <!-- ========================================
+       大切にしていること（支援の特徴）
+  ======================================== -->
+  <section class="section" id="approach" aria-labelledby="approach-title">
+    <div class="section__inner">
+      <h2 class="section__title" id="approach-title">大切にしていること</h2>
+      <p class="section__lead">叱られるから動くのではなく、「ここで働いていて良かった」と思える環境でこそ、人は一番成長する。そう考えて、次の4つを大事にしています。</p>
+
+      <div class="approach">
+        <article class="approach__item">
+          <svg class="approach__icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 38V20l16-10 16 10v18" /><path d="M19 38V27h10v11" /><path d="M4 38h40" /></svg>
+          <h3>現場のリアルな悩みから考える</h3>
+          <p>携帯キャリア代理店での17年にわたる現場・マネジメント経験や、飲食店・小売・整骨院など、さまざまな現場の声を踏まえ、「よくある困りごと」を出発点にしています。</p>
+        </article>
+        <article class="approach__item">
+          <svg class="approach__icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M6 12h24v16H16l-6 5v-5H6z" /><path d="M34 18h8v14h-4v5l-6-5h-8v-2" /></svg>
+          <h3>一方的に話さず、対話で深掘りする</h3>
+          <p>アドバイスを並べるのではなく、対話やロールプレイを通じて「本当の課題」を一緒に見つけ、「明日からできる行動」へと整理します。</p>
+        </article>
+        <article class="approach__item">
+          <svg class="approach__icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M12 6h18l8 8v28H12z" /><path d="M30 6v8h8" /><path d="M18 24h14M18 30h14M18 36h8" /></svg>
+          <h3>あなた専用の資料をお渡しする</h3>
+          <p>対話で見えてきた悩みやテーマに合わせて、生成AIも取り入れながら、オリジナルの解説資料やワークシートをスピーディーに作成してお渡しします。</p>
+        </article>
+        <article class="approach__item">
+          <svg class="approach__icon" viewBox="0 0 48 48" aria-hidden="true"><circle cx="17" cy="24" r="10" /><circle cx="31" cy="24" r="10" /></svg>
+          <h3>「型」と「心」の両方を育てる</h3>
+          <p>ロジカルシンキングやコミュニケーションの「型」だけでなく、空手・柔道で培った自己鍛錬のマインドもお伝えし、長く続く成長につなげます。</p>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- 特徴 -->
-  <section id="features" class="section accordion-content">
-    <h2>研修・伴走支援の特徴</h2>
-    <p>私の支援では、以下の4つを大切にしています。</p>
-    <div class="features-grid">
-      <div class="feature">
-        <h3>現場のリアルな悩みに即した内容</h3>
-        <p>携帯キャリア代理店での17年にわたる現場・マネジメント経験や、飲食店・小売・整骨院など、さまざまな現場の声を踏まえ、「よくある困りごと」をテーマにしています。</p>
+  <!-- ========================================
+       研修・相談メニュー（タブ切り替え）
+  ======================================== -->
+  <section class="section section--tint" id="programs" aria-labelledby="programs-title">
+    <div class="section__inner">
+      <h2 class="section__title" id="programs-title">研修・相談メニュー</h2>
+      <p class="section__lead">対象は、個人事業主・店長・リーダー・管理職・一般スタッフなど。内容や時間は、ご状況に合わせて柔軟に調整します。</p>
+
+      <div class="tabs" data-tabs>
+        <div class="tabs__list" role="tablist" aria-label="メニューの種類">
+          <button class="tabs__tab" role="tab" id="tab-team" aria-controls="panel-team" aria-selected="true">チーム・組織向け研修</button>
+          <button class="tabs__tab" role="tab" id="tab-personal" aria-controls="panel-personal" aria-selected="false" tabindex="-1">個人向けの相談</button>
+          <button class="tabs__tab" role="tab" id="tab-other" aria-controls="panel-other" aria-selected="false" tabindex="-1">その他のご依頼</button>
+        </div>
+
+        <div class="tabs__panel" role="tabpanel" id="panel-team" aria-labelledby="tab-team" tabindex="0">
+          <div class="menu-grid">
+            <article class="menu-item">
+              <h3>メンタリング・育成研修</h3>
+              <p>部下・後輩の「話を引き出す」「成長を支える」ための関わり方</p>
+            </article>
+            <article class="menu-item">
+              <h3>若手・新人スタッフ育成研修</h3>
+              <p>早期離職を防ぎ、戦力として育っていくための指導・育成のポイント</p>
+            </article>
+            <article class="menu-item">
+              <h3>コミュニケーションスキル研修</h3>
+              <p>聴き方・伝え方・フィードバックの基本</p>
+            </article>
+            <article class="menu-item">
+              <h3>ロジカルシンキング基礎研修</h3>
+              <p>報告・連絡・相談が「分かりやすくなる」考え方と伝え方</p>
+            </article>
+            <article class="menu-item">
+              <h3>ハラスメント防止研修</h3>
+              <p>「どこからがアウトなのか？」グレーゾーンを具体例で理解する</p>
+            </article>
+            <article class="menu-item">
+              <h3>自己啓発・マインドセット研修</h3>
+              <p>空手の経験も交えながら、「折れない心」と「前向きに学ぶ姿勢」を育てる</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="tabs__panel" role="tabpanel" id="panel-personal" aria-labelledby="tab-personal" tabindex="0" hidden>
+          <article class="menu-feature">
+            <div>
+              <h3>1on1 個別メンタリング・相談</h3>
+              <p>個人のお悩みや課題にじっくり向き合います。お話しした内容をもとに、AI技術も活用して、あなた専用のワークシートや整理資料を作成してお渡しします。</p>
+              <p>「仕事のこと」「人間関係のこと」「この先どうしたいか」など、テーマは決まっていなくても構いません。</p>
+            </div>
+            <a class="text-link" href="https://notebook.google.com/notebook/04ad4040-eeaf-43c3-be8a-fafff02e63a5/artifact/94030a6a-9adf-4e59-8db5-3f452ff47142?utm_source=nlm_web_share&utm_medium=google_oo&utm_campaign=art_share_1&utm_content=&utm_smc=nlm_web_share_google_oo_art_share_1_" target="_blank" rel="noopener noreferrer">実際にお渡しした資料の例を見る</a>
+          </article>
+        </div>
+
+        <div class="tabs__panel" role="tabpanel" id="panel-other" aria-labelledby="tab-other" tabindex="0" hidden>
+          <article class="menu-feature">
+            <div>
+              <h3>バンド演奏のご依頼</h3>
+              <p>20年以上続けているバンド活動を活かして、イベントや施設での演奏のご要望も承っています。</p>
+            </div>
+            <a class="text-link" href="https://heso710soul-ctrl.github.io/HeSoband/" target="_blank" rel="noopener noreferrer">HeSo band の公式サイトを見る</a>
+          </article>
+        </div>
       </div>
-      <div class="feature">
-        <h3>対話型の深いヒアリング</h3>
-        <p>一方的なアドバイスではなく、対話やロールプレイを通じて「本当の課題」を徹底的に深掘りし、「明日からできる行動」へと整理します。</p>
-      </div>
-      <div class="feature">
-        <h3>生成AIを活用した「完全オーダーメイド資料」</h3>
-        <p>対話で浮き彫りになったあなたの悩みやテーマに合わせて、AI技術を取り入れて構築したオリジナルの解説資料やワークシートをスピーディーに作成・お渡しします。</p>
-      </div>
-      <div class="feature">
-        <h3>型（ロジック）と心（マインド）の両方にアプローチ</h3>
-        <p>ロジカルシンキングやコミュニケーションの「型」だけでなく、空手・柔道で培った自己鍛錬のマインドもお伝えし、長く続く成長につなげます。</p>
+
+      <p class="note">※料金は内容・時間・回数により個別にお見積もりします。ご予算に応じた調整も可能です。</p>
+    </div>
+  </section>
+
+  <!-- ========================================
+       お客様の声
+  ======================================== -->
+  <section class="section" id="voices" aria-labelledby="voices-title">
+    <div class="section__inner">
+      <h2 class="section__title" id="voices-title">お客様の声</h2>
+
+      <div class="voices">
+        <figure class="voice">
+          <blockquote>
+            <p>河野さんには月に４回、空手や格闘技を通じて“手段”と“目的”を分けるためのマインドセットの時間を作ってもらっています。河野さんが言っていた『正解はないけど、不正解はある』というのは花にも共通する部分があり、私自身もレッスンの際にお客様に伝える言葉の質やレパートリーが増え、非常に勉強になっています。</p>
+          </blockquote>
+          <figcaption>
+            <span class="voice__who">花屋経営　高橋様</span>
+            <span class="voice__what">自己啓発・マインドセット研修（月4回）</span>
+          </figcaption>
+        </figure>
+
+        <figure class="voice">
+          <blockquote>
+            <p>言いようの無い不安や焦りがあったのですが、お話をしていく上でうまく言葉に変換していただき頭の中にあったモヤモヤや不安が少し軽くなった感覚がありました。また、セッションを行った次の日には私専用の資料を作っていただきました。話していた内容が可視化され、より深く理解することができ、自分がモヤモヤしている原因を掴むことができました。</p>
+          </blockquote>
+          <figcaption>
+            <span class="voice__who">個人のお客様</span>
+            <span class="voice__what">個別セッション・オーダーメイド資料</span>
+          </figcaption>
+        </figure>
       </div>
     </div>
   </section>
 
-  <!-- 実績 -->
-  <section id="achievements" class="section accordion-content">
-    <h2>これまでの活動・実績</h2>
-    <ul class="timeline">
-      <li>携帯キャリア代理店にて、17年間にわたりバックヤード業務・スタッフ育成・マネジメントに従事
-        <br><small>スタッフ向けの「伝え方」「コミュニケーション」に関する指導・フォローを継続</small>
-      </li>
-      <li>個人向け個別セッションにて、対話とAIを掛け合わせた完全専用の「思考整理・行動ロードマップ資料」を提供・サポート</li>
-      <li>花屋さんにて、月4回ペースで「空手を通じた自己啓発・マインドセット研修」を実施</li>
-      <li>飲食店店長など、現場責任者層への「新人教育」「育成」「伝え方」に関する個別相談・アドバイス</li>
-      <li>友人・知人が経営する企業・店舗における、研修・育成に関する相談対応</li>
-    </ul>
-    <p class="note">これまで、「人を育てたい」「伝え方に悩んでいる」という現場の方々や個人のご相談に伴走してきました。</p>
-  </section>
-
-  <!-- プロフィール -->
-  <section id="profile" class="section accordion-content">
-    <h2>プロフィール</h2>
-    <p class="profile-name">河野 智也（かわの ともや）｜組織づくり・人材育成講師</p>
-
-    <h3>略歴</h3>
-    <ul class="plain-list">
-      <li>携帯キャリア代理店にて、店舗バックヤードスタッフとして入社後、17年間現場での接客・育成・マネジメントを経験</li>
-      <li>約20年以上バンド活動を続け、チームで何かを創り上げる経験を重ねる</li>
-      <li>Barでの接客業務・イベントの進行など、サービス業を中心にさまざまな現場で「人」と向き合う</li>
-      <li>こうした経験を通して、「人が育つ環境づくり（=人財）」の重要性を感じ、現在は店舗・個人向けに研修・相談を行っています</li>
-    </ul>
-
-    <h3>大切にしていること</h3>
-    <p>叱られるから動くのではなく、「ここで働いていて良かった」と思える環境でこそ、人は一番成長すると考えています。</p>
-    <p>現場では、「どう伝えたらいいか分からない」「部下とどう向き合えばいいのか迷っている」という声をたくさん耳にしてきました。</p>
-    <p>だからこそ、</p>
-    <ul class="plain-list">
-      <li>現場のリアルな悩みに寄り添うこと</li>
-      <li>すぐに使える、具体的な言葉や関わり方を一緒に考えること</li>
-    </ul>
-    <p>を大事にしながら、研修や個別相談を行っています。</p>
-  </section>
-
-  <!-- お客様の声 -->
-  <section id="voices" class="section accordion-content">
-    <h2>お客様の声・事例</h2>
-    <p>研修・個別相談をご利用いただいた方々の声をご紹介します。</p>
-    <div class="cards">
-    
-      <!-- 花屋さん事例 -->
-      <div class="card">
-        <h3>花屋経営：高橋様</h3>
-        <p>河野さんには月に４回、空手や格闘技を通じて“手段”と”目的”を分けるためのマインドセットの時間を作ってもらっています。河野さんが言っていた『正解はないけど、不正解はある』というのは花にも共通する部分があり、私自身もレッスンの際にお客様に伝える言葉の質やレパートリーが増え、非常に勉強になっています。</p>
+  <!-- ========================================
+       プロフィール・これまでの活動
+  ======================================== -->
+  <section class="section section--tint" id="profile" aria-labelledby="profile-title">
+    <div class="section__inner profile">
+      <div class="profile__head">
+        <h2 class="section__title" id="profile-title">プロフィール</h2>
+        <p class="profile__name">河野 智也<span>かわの ともや</span></p>
+        <p class="profile__role">組織づくり・人材育成メンター</p>
+        <img class="profile__photo" src="image/image_001.jpg" alt="河野智也のプロフィール写真" width="2048" height="1371" loading="lazy">
       </div>
 
-     <!-- 個人ご相談の事例 -->
-      <div class="card">
-        <h3>個別セッション・オーダーメイド資料提供（個人のお客様）</h3>
-        <p>言いようの無い不安や焦りがあったのですが、お話をしていく上でうまく言葉に変換していただき頭の中にあったモヤモヤや不安が少し軽くなった感覚がありました。また、セッションを行った次の日には私専用の資料を作っていただきました。話していた内容が可視化され、より深く理解することができ、自分がモヤモヤしている原因を掴むことができました。</p>
-        <p style="margin-top: 15px; font-weight: bold;">
-          👉 <a href="https://notebook.google.com/notebook/04ad4040-eeaf-43c3-be8a-fafff02e63a5/artifact/94030a6a-9adf-4e59-8db5-3f452ff47142?utm_source=nlm_web_share&utm_medium=google_oo&utm_campaign=art_share_1&utm_content=&utm_smc=nlm_web_share_google_oo_art_share_1_" target="_blank" rel="noopener noreferrer">実際の提供資料はこちら</a>
-        </p>
+      <div class="profile__body">
+        <p>携帯キャリア代理店に店舗バックヤードスタッフとして入社し、17年間、現場での接客・育成・マネジメントを経験してきました。</p>
+        <p>20年以上続けているバンド活動では、チームで何かを創り上げる経験を重ね、Barでの接客やイベントの進行など、サービス業を中心にさまざまな現場で「人」と向き合ってきました。</p>
+        <p>現場では「どう伝えたらいいか分からない」「部下とどう向き合えばいいのか迷っている」という声をたくさん耳にしてきました。こうした経験から、人が育つ環境づくりの大切さを感じ、いまは店舗・個人の方に向けて研修や相談を行っています。</p>
+
+        <h3 class="profile__subtitle">これまでの活動</h3>
+        <ul class="history">
+          <li>携帯キャリア代理店で17年間、バックヤード業務・スタッフ育成・マネジメントに従事。スタッフ向けの「伝え方」「コミュニケーション」の指導・フォローを継続</li>
+          <li>個人向けの個別セッションで、対話とAIを掛け合わせた専用の「思考整理・行動ロードマップ資料」を提供</li>
+          <li>花屋さんで、月4回ペースの「空手を通じた自己啓発・マインドセット研修」を実施</li>
+          <li>飲食店の店長など、現場責任者の方への「新人教育」「育成」「伝え方」に関する個別相談</li>
+          <li>友人・知人が経営する企業・店舗での、研修・育成に関する相談対応</li>
+        </ul>
       </div>
-        
-      </div>
-    
     </div>
   </section>
 
-  <!-- 依頼の流れ -->
-  <section id="flow" class="section accordion-content">
-    <h2>研修ご依頼の流れ</h2>
-    <ol class="flow-list">
-      <li><strong>お問い合わせ</strong><br>ご希望のテーマ・対象者・人数・実施時期などを、ざっくりで構いませんのでお聞かせください。</li>
-      <li><strong>ヒアリング（オンライン or ご訪問）</strong><br>現在のお悩みや、組織の状況を伺いながら、内容・時間・回数をご提案します。</li>
-      <li><strong>ご提案・お見積もり</strong><br>テーマ・回数・料金の目安をご提示します。ご予算に応じて調整も可能です。</li>
-      <li><strong>実施準備</strong><br>資料作成・事前アンケートなど、必要に応じて準備を行います。</li>
-      <li><strong>研修実施・フィードバック</strong><br>研修後、簡単な振り返りや、今後のフォローについてもご相談いただけます。</li>
-    </ol>
-    <p class="note">※料金は内容・時間・回数により個別にお見積もりいたします。</p>
+  <!-- ========================================
+       ご依頼の流れ（順番がある内容なので番号つき）
+  ======================================== -->
+  <section class="section" id="flow" aria-labelledby="flow-title">
+    <div class="section__inner">
+      <h2 class="section__title" id="flow-title">ご依頼の流れ</h2>
+      <ol class="flow">
+        <li>
+          <h3>お問い合わせ</h3>
+          <p>ご希望のテーマ・対象の方・人数・時期などを、ざっくりで構いませんのでお聞かせください。</p>
+        </li>
+        <li>
+          <h3>ヒアリング</h3>
+          <p>オンラインまたはご訪問で、いまのお悩みや組織の状況を伺います。</p>
+        </li>
+        <li>
+          <h3>ご提案・お見積もり</h3>
+          <p>内容・時間・回数と料金の目安をご提示します。ご予算に応じて調整も可能です。</p>
+        </li>
+        <li>
+          <h3>実施の準備</h3>
+          <p>資料作成や事前アンケートなど、必要に応じて準備を進めます。</p>
+        </li>
+        <li>
+          <h3>実施・ふりかえり</h3>
+          <p>実施後の振り返りや、その後のフォローについてもご相談いただけます。</p>
+        </li>
+      </ol>
+    </div>
   </section>
 
-  <!-- お問い合わせ -->
-<section id="contact" class="section alt">
-  <h2>お問い合わせ</h2>
-  <p>研修・セミナー・個別相談のお問い合わせは、こちらからお気軽にご連絡ください。</p>
+  <!-- ========================================
+       最新のブログ記事（新しい順に3件・自動で更新）
+  ======================================== -->
+  <section class="section section--tint" id="journal" aria-labelledby="journal-title">
+    <div class="section__inner">
+      <div class="journal__head">
+        <h2 class="section__title" id="journal-title">ブログ</h2>
+        <a class="text-link" href="blog/">記事をすべて見る</a>
+      </div>
+      <p class="section__lead">研修や現場での気づき、日々のことを、ゆるやかに書いています。</p>
+      <ul class="post-list">
+        {% for post in site.posts limit:3 %}
+        <li>
+          <a href="{{ post.url | prepend: site.baseurl }}">
+            <span class="post-list__meta"><time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%Y.%m.%d" }}</time>{% if post.categories.size > 0 %}<span class="tag">{{ post.categories | join: "・" }}</span>{% endif %}</span>
+            <span class="post-list__title">{{ post.title }}</span>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
 
-  <!-- Googleフォームへのボタン -->
-  <a href="https://forms.gle/biAGU34zxz9rMv6e9" target="_blank" rel="noopener noreferrer" class="btn btn-form">
-    📩 お問い合わせフォームはこちら
-  </a>
+  <!-- ========================================
+       お問い合わせ
+  ======================================== -->
+  <section class="section contact" id="contact" aria-labelledby="contact-title">
+    <div class="section__inner contact__inner">
+      <div class="contact__intro">
+        <h2 class="section__title" id="contact-title">お問い合わせ</h2>
+        <p>研修・セミナー・個別相談のご依頼やご質問は、こちらからお気軽にどうぞ。</p>
+        <p>「こんなことは頼める？」という段階でも大丈夫です。内容を拝見したうえで、河野からメールでご連絡します。</p>
+      </div>
 
-  <p class="note">
-    「こんなことは頼める？」という段階でも、まずはご相談ください。
-  </p>
-</section>
+      <form class="contact-form" id="contact-form" data-endpoint="{{ site.contact_endpoint }}" data-fallback="{{ site.contact_fallback_url }}" novalidate>
+        <div class="field">
+          <label for="cf-name">お名前<span class="req">必須</span></label>
+          <input id="cf-name" name="name" type="text" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="cf-org">会社名・店舗名<span class="opt">任意</span></label>
+          <input id="cf-org" name="organization" type="text" autocomplete="organization">
+        </div>
+        <div class="field">
+          <label for="cf-email">メールアドレス<span class="req">必須</span></label>
+          <input id="cf-email" name="email" type="email" autocomplete="email" inputmode="email" required>
+        </div>
+        <div class="field">
+          <label for="cf-tel">電話番号<span class="opt">任意</span></label>
+          <input id="cf-tel" name="tel" type="tel" autocomplete="tel" inputmode="tel">
+        </div>
+        <fieldset class="field field--choices">
+          <legend>ご相談の種類<span class="req">必須</span></legend>
+          <label class="choice"><input type="radio" name="topic" value="研修のご依頼・ご相談" required> 研修のご依頼・ご相談</label>
+          <label class="choice"><input type="radio" name="topic" value="個別相談（1on1）"> 個別相談（1on1）</label>
+          <label class="choice"><input type="radio" name="topic" value="バンド演奏のご依頼"> バンド演奏のご依頼</label>
+          <label class="choice"><input type="radio" name="topic" value="その他"> その他</label>
+        </fieldset>
+        <div class="field">
+          <label for="cf-message">ご相談内容<span class="req">必須</span></label>
+          <textarea id="cf-message" name="message" rows="7" required placeholder="例）新人スタッフへの教え方について、店長向けに研修をお願いしたいです。人数は5名ほど、12月ごろを考えています。"></textarea>
+        </div>
+        <!-- ボット対策（人には見えない欄です。入力があった送信は受け付けません） -->
+        <div class="hp" aria-hidden="true">
+          <label for="cf-website">ウェブサイト</label>
+          <input id="cf-website" name="website" type="text" tabindex="-1" autocomplete="off">
+        </div>
+        <p class="contact-form__privacy">いただいた情報は、お問い合わせへのご連絡のためだけに使います。</p>
+        <button class="button contact-form__submit" type="submit">この内容で送信する</button>
+        <p class="contact-form__status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
 
 </main>
 
-<footer>
-  <p>&copy; 2026 Tomoya Kawano</p>
-</footer>
+{% include site-footer.html %}
 
 <script src="script.js"></script>
 </body>

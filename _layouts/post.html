@@ -1,14 +1,35 @@
 ---
 layout: default
 ---
-<article class="section post">
-  <p class="post-date">{{ page.date | date: "%Y年%m月%d日" }}</p>
-  <h1>{{ page.title }}</h1>
-  <div class="post-content">
+<article class="article">
+  <header class="article__head">
+    <p class="article__meta">
+      <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: "%Y年%m月%d日" }}</time>
+      {% if page.categories.size > 0 %}<span class="tag">{{ page.categories | join: "・" }}</span>{% endif %}
+    </p>
+    <h1 class="article__title">{{ page.title }}</h1>
+  </header>
+
+  <div class="article__body">
     {{ content }}
   </div>
 
-  <p class="post-back">
-    <a href="{{ site.baseurl }}/blog/">← ブログ一覧に戻る</a>
-  </p>
+  <aside class="article__author" aria-label="この記事を書いた人">
+    <img src="{{ site.baseurl }}/image/image_001.jpg" alt="" width="96" height="96" loading="lazy">
+    <div>
+      <p class="article__author-name">河野 智也</p>
+      <p>組織づくり・人材育成メンター。「伝え方」と「関わり方」で、現場の空気を一緒に変えていく伴走型の研修・相談を行っています。</p>
+      <p class="article__author-links">
+        <a class="text-link" href="{{ site.baseurl }}/#programs">研修・相談メニュー</a>
+        <a class="text-link" href="{{ site.baseurl }}/#contact">相談してみる</a>
+      </p>
+    </div>
+  </aside>
+
+  <nav class="article__nav" aria-label="前後の記事">
+    {% if page.previous %}<a class="article__nav-prev" href="{{ page.previous.url | prepend: site.baseurl }}"><span>前の記事</span>{{ page.previous.title }}</a>{% endif %}
+    {% if page.next %}<a class="article__nav-next" href="{{ page.next.url | prepend: site.baseurl }}"><span>次の記事</span>{{ page.next.title }}</a>{% endif %}
+  </nav>
+
+  <p class="article__back"><a class="text-link" href="{{ site.baseurl }}/blog/">ブログ一覧に戻る</a></p>
 </article>

@@ -14,3 +14,13 @@ plugins:
 # Jekyllのビルド対象から除外するファイル
 exclude:
   - README.md
+  - contact-form-gas/
+
+# ============================================
+# お問い合わせフォームの送信先
+# Google Apps Script を「ウェブアプリ」としてデプロイしたときのURLを貼り付けます
+# （手順は contact-form-gas/README.md を参照）
+# 空のあいだは、送信ボタンを押すと下の contact_fallback_url（旧Googleフォーム）を案内します
+# ============================================
+contact_endpoint: ""
+contact_fallback_url: "https://forms.gle/biAGU34zxz9rMv6e9"
