@@ -46,12 +46,14 @@
   ======================================== -->
   <section class="hero">
     <div class="hero__text">
-      <p class="hero__heard">現場でいちばん多く聞いてきた言葉</p>
-      <h1 class="hero__voice">
-        <span class="hero__quote"><span class="nb">「どう伝えたらいいか、</span><span class="nb">わからない」</span></span>
+      <h1 class="hero__voice" aria-describedby="hero-heard">
+        <span class="hero__quote">「どう伝えたらいいか、<br>わからない」</span>
       </h1>
-      <p class="hero__answer"><span class="nb">その言葉の続きを、</span><span class="nb">まずはゆっくり聴かせてください。</span></p>
-      <p class="hero__lead">店舗や中小企業の「人」と「伝え方」の悩みに、対話で寄り添う伴走型メンターです。答えを押しつけるのではなく、現場の事情を伺いながら、明日から使える言葉と関わり方を一緒に考えます。</p>
+      <div class="hero__reply">
+        <p class="hero__heard" id="hero-heard">現場でいちばん多く聞いてきた言葉です。</p>
+        <p class="hero__answer"><span class="nb">その言葉の続きを、</span><span class="nb">まずはゆっくり</span><span class="nb">聴かせてください。</span></p>
+        <p class="hero__lead">店舗や中小企業の「人」と「伝え方」の悩みに、対話で寄り添う伴走型メンターです。答えを押しつけるのではなく、現場の事情を伺いながら、明日から使える言葉と関わり方を一緒に考えます。</p>
+      </div>
       <div class="hero__actions">
         <a class="button" href="#contact">相談してみる</a>
         <a class="text-link" href="#programs">研修・相談メニューを見る</a>
@@ -114,9 +116,51 @@
   </section>
 
   <!-- ========================================
+       お話しすると、こう整理されます（個別相談のあとにお渡しする資料のイメージ）
+  ======================================== -->
+  <section class="section section--tint" id="sheet" aria-labelledby="sheet-title">
+    <div class="section__inner">
+      <h2 class="section__title" id="sheet-title">お話しすると、こう整理されます</h2>
+      <p class="section__lead">頭の中のモヤモヤは、話しながら少しずつ言葉になっていきます。個別相談では、その言葉をもとに、あなた専用の整理資料を作ってお渡しします。</p>
+
+      <div class="sheet">
+        <div class="sheet__heard">
+          <p class="sheet__label">お話の中で出てきた言葉</p>
+          <ul class="sheet__words">
+            <li>毎日忙しいのに、前に進んでいる気がしない</li>
+            <li>何を頑張ればいいのか、分からなくなってきた</li>
+            <li>みんなの期待には応えたいんだけど…</li>
+          </ul>
+        </div>
+
+        <div class="sheet__paper">
+          <p class="sheet__paper-title">整理シート</p>
+          <dl class="sheet__rows">
+            <div>
+              <dt>いま起きていること</dt>
+              <dd>やることが増え続けて、ひとつひとつに追われている</dd>
+            </div>
+            <div>
+              <dt>本当は気になっていること</dt>
+              <dd>自分がどうありたいかを、考える余白がない</dd>
+            </div>
+            <div>
+              <dt>明日やってみること</dt>
+              <dd>「やらないこと」をひとつ決めて、上司に相談してみる</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+      <p class="sheet__caption">資料のイメージです（内容は架空の例です）。実際には、お話の内容に合わせて図やワークシートも入れて作ります。</p>
+      <p><a class="text-link" href="https://notebook.google.com/notebook/04ad4040-eeaf-43c3-be8a-fafff02e63a5/artifact/94030a6a-9adf-4e59-8db5-3f452ff47142?utm_source=nlm_web_share&utm_medium=google_oo&utm_campaign=art_share_1&utm_content=&utm_smc=nlm_web_share_google_oo_art_share_1_" target="_blank" rel="noopener noreferrer">実際にお渡しした資料の例を見る</a></p>
+    </div>
+  </section>
+
+  <!-- ========================================
        研修・相談メニュー（タブ切り替え）
   ======================================== -->
-  <section class="section section--tint" id="programs" aria-labelledby="programs-title">
+  <section class="section" id="programs" aria-labelledby="programs-title">
     <div class="section__inner">
       <h2 class="section__title" id="programs-title">研修・相談メニュー</h2>
       <p class="section__lead">対象は、個人事業主・店長・リーダー・管理職・一般スタッフなど。内容や時間は、ご状況に合わせて柔軟に調整します。</p>
@@ -193,7 +237,7 @@
   <!-- ========================================
        お客様の声
   ======================================== -->
-  <section class="section" id="voices" aria-labelledby="voices-title">
+  <section class="section section--tint" id="voices" aria-labelledby="voices-title">
     <div class="section__inner">
       <h2 class="section__title" id="voices-title">お客様の声</h2>
 
@@ -224,13 +268,13 @@
   <!-- ========================================
        プロフィール・これまでの活動
   ======================================== -->
-  <section class="section section--tint" id="profile" aria-labelledby="profile-title">
+  <section class="section" id="profile" aria-labelledby="profile-title">
     <div class="section__inner profile">
       <div class="profile__head">
         <h2 class="section__title" id="profile-title">プロフィール</h2>
         <p class="profile__name">河野 智也<span>かわの ともや</span></p>
         <p class="profile__role">組織づくり・人材育成メンター</p>
-        <img class="profile__photo" src="image/image_001.jpg" alt="河野智也のプロフィール写真" width="2048" height="1371" loading="lazy">
+        <img class="profile__photo" src="image/image_001.jpg" alt="河野智也のプロフィール写真" width="2048" height="1371">
       </div>
 
       <div class="profile__body">
@@ -253,7 +297,7 @@
   <!-- ========================================
        ご依頼の流れ（順番がある内容なので番号つき）
   ======================================== -->
-  <section class="section" id="flow" aria-labelledby="flow-title">
+  <section class="section section--tint" id="flow" aria-labelledby="flow-title">
     <div class="section__inner">
       <h2 class="section__title" id="flow-title">ご依頼の流れ</h2>
       <ol class="flow">
@@ -284,7 +328,7 @@
   <!-- ========================================
        最新のブログ記事（新しい順に3件・自動で更新）
   ======================================== -->
-  <section class="section section--tint" id="journal" aria-labelledby="journal-title">
+  <section class="section" id="journal" aria-labelledby="journal-title">
     <div class="section__inner">
       <div class="journal__head">
         <h2 class="section__title" id="journal-title">ブログ</h2>
@@ -307,7 +351,7 @@
   <!-- ========================================
        お問い合わせ
   ======================================== -->
-  <section class="section contact" id="contact" aria-labelledby="contact-title">
+  <section class="section section--tint contact" id="contact" aria-labelledby="contact-title">
     <div class="section__inner contact__inner">
       <div class="contact__intro">
         <h2 class="section__title" id="contact-title">お問い合わせ</h2>
