@@ -5,6 +5,7 @@
 <html lang="ja">
 <head>
 {% include head-common.html %}
+  <link rel="stylesheet" href="fold.css">
   <title>河野智也｜組織づくり・人材育成メンター（コミュニケーション・ハラスメント防止研修）</title>
   <meta name="description" content="河野智也（かわの ともや）は、組織づくり・人材育成メンターとして、ロジカルシンキング・コミュニケーション・ハラスメント防止などのテーマで「自立して考え動ける人」を育てる伴走型の研修・支援を行っています。携帯キャリア代理店での17年の現場経験をもとに、答えを押しつけるのではなく、現場のリアルな悩みから一緒に解決策を導く実践的な関わりを大切にしています。">
 
@@ -118,7 +119,7 @@
   <!-- ========================================
        お話しすると、こう整理されます（個別相談のあとにお渡しする資料のイメージ）
   ======================================== -->
-  <section class="section section--tint" id="sheet" aria-labelledby="sheet-title">
+  <section class="section section--tint" id="sheet" data-fold aria-labelledby="sheet-title">
     <div class="section__inner">
       <h2 class="section__title" id="sheet-title">お話しすると、こう整理されます</h2>
       <p class="section__lead">頭の中のモヤモヤは、話しながら少しずつ言葉になっていきます。個別相談では、その言葉をもとに、あなた専用の整理資料を作ってお渡しします。</p>
@@ -160,7 +161,7 @@
   <!-- ========================================
        研修・相談メニュー（タブ切り替え）
   ======================================== -->
-  <section class="section" id="programs" aria-labelledby="programs-title">
+  <section class="section" id="programs" data-fold aria-labelledby="programs-title">
     <div class="section__inner">
       <h2 class="section__title" id="programs-title">研修・相談メニュー</h2>
       <p class="section__lead">対象は、個人事業主・店長・リーダー・管理職・一般スタッフなど。内容や時間は、ご状況に合わせて柔軟に調整します。</p>
@@ -237,7 +238,7 @@
   <!-- ========================================
        お客様の声
   ======================================== -->
-  <section class="section section--tint" id="voices" aria-labelledby="voices-title">
+  <section class="section section--tint" id="voices" data-fold aria-labelledby="voices-title">
     <div class="section__inner">
       <h2 class="section__title" id="voices-title">お客様の声</h2>
 
@@ -268,7 +269,7 @@
   <!-- ========================================
        プロフィール・これまでの活動
   ======================================== -->
-  <section class="section" id="profile" aria-labelledby="profile-title">
+  <section class="section" id="profile" data-fold aria-labelledby="profile-title">
     <div class="section__inner profile">
       <div class="profile__head">
         <h2 class="section__title" id="profile-title">プロフィール</h2>
@@ -297,7 +298,7 @@
   <!-- ========================================
        ご依頼の流れ（順番がある内容なので番号つき）
   ======================================== -->
-  <section class="section section--tint" id="flow" aria-labelledby="flow-title">
+  <section class="section section--tint" id="flow" data-fold aria-labelledby="flow-title">
     <div class="section__inner">
       <h2 class="section__title" id="flow-title">ご依頼の流れ</h2>
       <ol class="flow">
@@ -328,7 +329,7 @@
   <!-- ========================================
        最新のブログ記事（新しい順に3件・自動で更新）
   ======================================== -->
-  <section class="section" id="journal" aria-labelledby="journal-title">
+  <section class="section" id="journal" data-fold aria-labelledby="journal-title">
     <div class="section__inner">
       <div class="journal__head">
         <h2 class="section__title" id="journal-title">ブログ</h2>
@@ -410,5 +411,6 @@
 {% include site-footer.html %}
 
 <script src="script.js"></script>
+<script src="fold.js"></script>
 </body>
 </html>
