@@ -1,0 +1,99 @@
+/* ============================================================
+   料金の目安（トップページ「研修・相談メニュー」の下）
+   色・角丸は style.css の :root をそのまま使っています
+   ============================================================ */
+
+.pricing {
+  margin-top: clamp(48px, 7vw, 72px);
+  padding-top: clamp(32px, 5vw, 48px);
+  border-top: 1px solid var(--line);
+}
+
+.pricing__title {
+  font-family: var(--font-voice);
+  font-size: clamp(1.25rem, 2.6vw, 1.5rem);
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.5;
+}
+
+.pricing__lead {
+  margin-top: 8px;
+  color: var(--ink-soft);
+  max-width: var(--read);
+}
+
+.pricing__groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.pricing__group {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 24px 26px;
+}
+
+.pricing__label {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--leaf);
+  background: var(--mist);
+  border-radius: 999px;
+  padding: 2px 14px;
+  margin-bottom: 8px;
+}
+
+.pricing__list > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px dashed var(--line);
+}
+.pricing__list > div:last-child { border-bottom: 0; padding-bottom: 0; }
+
+.pricing__list dt {
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.6;
+}
+.pricing__list dt span {
+  display: block;
+  font-weight: 400;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+
+.pricing__list dd {
+  flex-shrink: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--navy);
+  white-space: nowrap;
+  font-feature-settings: "palt" 1, "tnum" 1;
+}
+.pricing__list dd small {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+  margin-left: 2px;
+}
+
+.pricing__notes {
+  margin-top: 20px;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  display: grid;
+  gap: 4px;
+}
+.pricing__notes li {
+  padding-left: 1.2em;
+  text-indent: -1.2em;
+}
+.pricing__notes li::before { content: "※"; margin-right: 0.2em; }
