@@ -14,13 +14,13 @@
   <script>
     // 古いブログの住所で来た人は note へ、それ以外は新しいサイトへ案内する
     var to = location.pathname.indexOf('/blog') !== -1 ? 'https://note.com/heso710' : 'https://heso-mentor.com/';
-    setTimeout(function () { location.replace(to); }, 3000);
+    location.replace(to);
   </script>
 </head>
 <body>
 <main>
   <h1>このサイトは引っ越しました</h1>
-  <p>ブログの記事は、いまは note で書いています。<br>数秒後に自動で移動します。</p>
+  <p>ブログの記事は、いまは note で書いています。<br>自動で移動しない場合は、下のボタンから開いてください。</p>
   <a class="btn" href="https://heso-mentor.com/">新しいサイトを開く</a>
   <a class="btn" href="https://note.com/heso710">noteを開く</a>
 </main>
