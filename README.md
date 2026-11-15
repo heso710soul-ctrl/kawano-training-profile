@@ -1,12 +1,12 @@
 # 河野智也 訓練プロフィールサイト
 
-> **2026-11-15 お知らせ(引っ越し作業中)**
-> - これからの本体は `public/` フォルダです。Cloudflare Pages(ビルドコマンド:なし/出力ディレクトリ:`public`)で、独自ドメイン `heso-mentor.com` として公開します
-> - ブログ機能は外しました。記事は note(https://note.com/heso710)で書いています。ヘッダー・フッターの「ブログ」は note へのリンクに差し替え済み
-> - `public/` は、ブログ用の仕組み(Jekyll)なしでそのまま動く形です。**今後トップページを直すときは `public/index.html` を直します**
-> - ルートにある `index.html`・`_includes/`・`_posts/` などは、古い住所(GitHub Pages)を引っ越し完了まで動かしておくために残しています。記事の原稿(`_posts/`)は消さずに保管します
-> - 自動で動いていた2つ(毎日の作り直し・Xへの自動投稿)は止めました。ファイルは `.github/workflows-stopped/` に移してあります
-> - 古いブログのURL(`/blog/...`)で来た人は、新しい住所では note に案内されます(`public/_redirects`)
+> **2026-11-15 引っ越し完了**
+> - 本体は `public/` フォルダ。Cloudflare Pages(ビルドコマンド:なし/出力ディレクトリ:`public`)で、**https://heso-mentor.com/** として公開中
+> - **トップページを直すときは `public/index.html` を直します**(ブログ用の仕組み Jekyll はもう使っていません)
+> - ブログ機能は外しました。記事は note(https://note.com/heso710)で書いています
+> - 古い住所(`heso710soul-ctrl.github.io/kawano-training-profile/`)は、ルートの `index.html` と `404.html` で「引っ越しました」と案内し、新しい住所(ブログのURLは note)へ自動で移動します
+> - 以前の一式(記事の原稿 `_posts/`・共通パーツ・設定)は、消さずに `_old-jekyll/` に保管しています。**この下の説明のうち、ブログやJekyllに関する部分は古い内容です**
+> - 止めた自動の仕組み2つ(毎日の作り直し・Xへの自動投稿)は `.github/workflows-stopped/` にあります
 
 
 組織づくり・人材育成メンター 河野智也の公式プロフィールサイトです。
