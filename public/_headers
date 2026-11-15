@@ -1,0 +1,12 @@
+# 安全のための設定(全ページ共通)
+#  nosniff …… ファイルの種類をブラウザに勝手に推測させない
+#  SAMEORIGIN …… 他人のサイトにこのページを埋め込ませない
+#  Referrer-Policy …… 外部リンク先に、細かい来訪元の情報を渡さない
+#  Permissions-Policy …… カメラ・マイク・位置情報などを使わない宣言
+#  HSTS …… 常にhttpsで開かせる
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+  Strict-Transport-Security: max-age=31536000

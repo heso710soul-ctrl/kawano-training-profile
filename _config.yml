@@ -15,6 +15,7 @@ plugins:
 exclude:
   - README.md
   - contact-form-gas/
+  - public/
 
 # ============================================
 # お問い合わせフォームの送信先
